@@ -46,7 +46,7 @@ function sortArray() {
         do
                 for n in ${!resultsArray[*]}
                 do
-                        if [[ ${resultsArray[n]} -lt ${resultsArray[n+1]} ]]
+                        if [[ ${resultsArray[n]} -gt ${resultsArray[n+1]} ]]
                         then
                                 num=${resultsArray[n]}
                                 resultsArray[n]=${resultsArray[n+1]}
@@ -54,7 +54,7 @@ function sortArray() {
                         fi
                 done
         done
-        echo "Sorted results in descending order: ${resultsArray[@]}"
+        echo "Sorted results in ascending order: ${resultsArray[@]}"
 
 }
 
