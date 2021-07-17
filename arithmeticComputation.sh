@@ -12,3 +12,4 @@ read -p "Enter c : " c
 # Doing arithmetic operation
 com1=$(( a + b * c ))
 com2=$(( a * b + c ))
+com3=$(( c + a / b ))
