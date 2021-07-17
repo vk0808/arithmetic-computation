@@ -7,3 +7,7 @@ echo "Welcome to Sorting Arithmetic Computation Problem"
 read -p "Enter a : " a
 read -p "Enter b : " b
 read -p "Enter c : " c
+
+
+# Doing arithmetic operation
+com1=$(( a + b * c ))
