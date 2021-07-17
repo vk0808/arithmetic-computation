@@ -7,7 +7,7 @@ echo "Welcome to Sorting Arithmetic Computation Problem"
 declare -A results
 
 
-# Declare an array
+# Declare an resultsArray
 index=0
 declare -a resultsArray
 
@@ -25,7 +25,6 @@ com3=$(( c + a / b ))
 com4=$(( a % b + c ))
 
 
-
 # Store computation results in dictionary
 results[computation_1]=$com1
 results[computation_2]=$com2
@@ -40,8 +39,32 @@ do
 done
 
 
-# Print results
+# Function to sort the results from the resultsArray
+function sortArray() {
+
+        for m in ${!resultsArray[*]}
+        do
+                for n in ${!resultsArray[*]}
+                do
+                        if [[ ${resultsArray[n]} -lt ${resultsArray[n+1]} ]]
+                        then
+                                num=${resultsArray[n]}
+                                resultsArray[n]=${resultsArray[n+1]}
+                                resultsArray[n+1]=$num
+                        fi
+                done
+        done
+        echo "Sorted results in descending order: ${resultsArray[@]}"
+
+}
+
+
+# Print dictionary
 for key in ${!results[*]}
 do
 	echo $key: ${results[$key]}
 done
+
+
+# Function call
+sortArray
